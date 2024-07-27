@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Shape And Color</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+        .cont{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2.7rem;
+            box-shadow: 0 0 100px 0 #B6BDBD;
+            width: 500px;
+            height: 400px;
+            border-radius: 5%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .shape{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 210px;
+            border-radius: 50%;
+            background-color: #008000;
+            /* clip-path: inset(58% 29% 15% 37%); */
+        }
+        .display{
+            height: 90px;
+            width: 112px; 
+            background-color: white;
+            /* clip-path: inset(58% 29% 15% 37%);  */
+        }
+         button{
+            padding: 0.8rem 1.5rem;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            margin-left: 1.3rem;
+            cursor: pointer; 
+        }
+        .btn button:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 10px 10px #BDC4C4;
+        }
+        @keyframes anim{
+            0%{
+                top: -100px;
+                transform: rotateZ(180deg);
+            }
+            25%{
+                top: 10%;
+            }
+            50%{
+                /* transform: translateY(5%); */
+                transform: rotateZ(180deg);
+            }
+            100%{
+                transform: rotateZ(180deg);
+                transform: translateY(15%);
+            }
+        }
+        .animation{
+            position: absolute;
+            animation: anim 3s linear;
+            transform-origin: center center;
+        }
+    </style>
+</head>
+<body>
+    <button id="view">Click To View Project</button>
+    <div class="cont">
+        <div class="shape">
+            <div class="display"></div>
+        </div>
+        <div class="btn">  
+            <button id="color">Change Color</button>
+            <button id="cshape">Change Shape</button>
+        </div>
+    </div>    
+    <script src = "script.js"></script>
+</body>
+</html>
