@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Mode</title>
+    <style>
+        .cont{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            justify-content: center;  
+            margin-top: 2.5rem;
+        }
+        .cont .switch{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            padding: 5px 5px;
+            border-radius: 50px;
+            width: 7rem;
+            height: 3rem;
+            cursor: pointer;
+            margin-bottom: 6rem;
+        }
+        .cont .switch img{
+            width: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        .cont .switch #btn{
+            position: absolute;
+            border-radius: 50px;
+            background-color: white;
+            border: 1px solid black;
+            height: 40px;
+            width : 50px;
+        }
+        .cont p{
+            font-size: 80px;
+            font-weight: bold;
+        }
+        @keyframes anim1{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(120%);
+            }
+        }
+        @keyframes anim2{
+            from{
+                transform: translateX(120%);
+            }
+            to{
+                transform: translateX(0%); 
+            }
+        }
+        .animation1{
+            animation: anim1 1s forwards;
+            
+        }
+        .animation2{
+            animation: anim2 1s;
+        }
+        .dark-mode{
+            background-color: black;
+        }
+        .light-mode{
+           color: white;
+        }
+        .switchclr{
+            background-color: #222222;
+        }
+        @keyframes anim3{
+            from{
+                transform: translateX(-25%);
+            }
+            to{
+                transform: translateX(100%);
+            }
+        }
+        .move{
+                animation: anim3 2s linear infinite backwards;;
+            }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="switch" >
+            <div id="btn" ></div>
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQpeG04Y9u6vRoa0QXlaVo1frvO7URjnuJDJ4oLf5_VzDkkxgg8" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlys_nQD75oBxhsRrjyzlIKbLBcs8GRTJShyRjXTo6BooIu9fs" alt="">
+        </div>
+        <p id="txt">Click on the Toggle Button</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
