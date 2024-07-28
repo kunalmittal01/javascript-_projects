@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard code</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            gap: 2rem;
+            align-items: center;
+        }
+        #key{
+            box-shadow: 0 0 10px rgba(128, 128, 128, 0.507);
+            padding: 0.5rem 3rem;
+        }
+        #key_code{
+            box-shadow: 0 0 10px rgba(128, 128, 128, 0.507);
+            color: #5AB778;
+        }
+        input{
+            border: 1px solid rgba(128, 128, 128, 0.568);
+            padding: 1rem 2rem;
+            font-size: 20px;
+        }
+        #key_name_disp{
+            width:fit-content;
+            color: #5AB778 !important;
+            font-size: 30px;
+            margin-left: 1rem;
+        }
+        #press{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <input id="key_name" type="text" placeholder="Press any keyboard key"> -->
+    <audio  id="audio">
+        <source src="keyboardSound.mp3" type="audio/mp3">
+    </audio>
+    <span id="key"><span id="press">Press any keyboard key</span> <span id="key_name_disp"></span></span>
+    <p id="key_code"></p>
+    <script src="script.js"></script>
+</body>
+</html>
