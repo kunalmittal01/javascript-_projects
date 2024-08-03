@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-cont">
+        <div class="cont-left">
+            <div class="left-wrap">
+                <div class="txt-clr">
+                    <textarea  id="input" rows="15" cols="60" placeholder="// Write a note here"></textarea>
+                   <input type="color" id="choose-clr" value="#00FFA1">
+                </div>
+                <div class="button">
+                    <button id="add-btn">Add Notes</button>
+                </div>
+                <button id="formatbtn">Formatting</button>
+                <div class="format-list">
+                    <div id="bold-cont" >
+                        <label for="bold">Bold</label>
+                        <input type="checkbox" id="bold">
+                    </div>
+                    <div id="italic-cont" >
+                        <label for="italic">Italic</label>
+                        <input type="checkbox" id="italic">
+                    </div>
+                    <div id="underline-cont">
+                        <label for="underline">Underline</label>
+                        <input type="checkbox" id="underline">
+                    </div>
+                    <p id="apply">Apply</p>
+                    <span id="cross">x</span>
+                </div>
+            </div>  
+            
+        </div>
+        <div class="cont-right">
+                <h1>Your Notes</h1>          
+                <p id="note">You have not added a note yet.</p>
+                <div id="notes-wrap" ></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
