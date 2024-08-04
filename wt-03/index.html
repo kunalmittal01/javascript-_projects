@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-cont">
+        <div class="left-cont">
+            <div class="product-cont">
+                <h1>Products</h1>
+                <div class="product">
+                    <span>Product-1</span>
+                    <span>100</span>
+                    <div class="counter">
+                        <span class="decrement" id="one">-</span>
+                        <span class="qty" id="qty1">0</span>
+                        <span class="increment" id="ione">+</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <span>Product-2</span>
+                    <span>200</span>
+                    <div class="counter">
+                        <span class="decrement" id="two">-</span>
+                        <span class="qty" id="qty2">0</span>
+                        <span class="increment" id="itwo">+</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <span>Product-3</span>
+                    <span>300</span>
+                    <div class="counter">
+                        <span class="decrement" id="three">-</span>
+                        <span class="qty" id="qty3">0</span>
+                        <span class="increment" id="ithree">+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-cont">
+            <h1>Cart</h1>
+            <div class="disp1 product">
+                <span>Product-1</span>
+                <span class="qty-disp"></span>
+            </div>
+            <div class="disp2 product">
+                <span>Product-2</span>
+                <span class="qty-disp"></span>
+            </div>
+            <div class="disp3 product">
+                <span>Product-3</span>
+                <span class="qty-disp"></span>
+            </div>
+            <div class="amount product">
+                <span id="tot">Total:</span>
+                <span class="qty-disp amt"></span>
+            </div>
+            <p id="mssg">No Product added to the cart.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
