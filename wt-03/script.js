@@ -8,16 +8,7 @@ let prod2 = document.getElementsByClassName('disp2')[0];
 let prod3 = document.getElementsByClassName('disp3')[0];
 let tot = document.getElementsByClassName('amount')[0];
 let msg = document.getElementById('mssg');
-// Array.from(dec).forEach(function(v,idx) {
-//     v.addEventListener('click', function() {
-//         if(cnt != 0){
-//            cnt--;
-//         }       
-//         qty[idx].innerHTML = cnt;
-        
-// }   );
-// });
-// console.log(dec);
+
 msg.style.display = 'none';
 tot.style.display = 'none';
 prod1.style.display = 'none';
