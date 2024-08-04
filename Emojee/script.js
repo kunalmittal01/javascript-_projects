@@ -49,7 +49,8 @@ face.addEventListener('click',()=>{
 }); 
    
 all.addEventListener('click',()=>{
-    display(emojiList);
+    disp.innerHTML = '';
+    return display(emojiList);
 }); 
    
 heart.addEventListener('click',()=>{
