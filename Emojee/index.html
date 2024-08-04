@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emojee Search</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #FFDFBB;
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+        }
+        .cont{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 2rem;
+        }
+        .btn-menu button{
+            padding: 0.5rem;
+            background-color: #FDBB8F;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .btn-menu button:hover{
+            background-color: #FCA56B;
+        }
+        .search{
+            display: flex;
+            /* border-radius: 10px; */
+        }
+        .search input {
+            border-radius: 50px;
+            border: none;
+            padding: 0.5rem 1rem;
+        }
+        .search input:focus{
+            outline: none;
+        }
+        #emojee-cont {
+            display: grid;
+            grid-template-columns: repeat(10,4.5rem);
+            justify-content: center;
+            font-size: 50px;
+            padding-inline: 5rem;
+            line-height: 5.5rem;
+        }
+        @media screen and (max-width: 600px){
+            #emojee-cont {
+                grid-template-columns: repeat(5,4.5rem);
+            }
+            .btn-menu{
+                display: grid;
+                grid-template-columns: repeat(2,4rem);
+                gap: 1rem;          
+              }
+        }
+        @media screen and (max-width: 375px) {
+            
+                #emojee-cont{
+                    grid-template-columns: repeat(5,3.5rem);
+                    font-size: 40px;
+                }
+               
+        }
+    </style>
+</head>
+<body>
+    <h1>Emojee - Emoji 🔍 Application</h1>
+    <div class="cont">
+        <div class="btn-menu">
+            <button id="all">All</button>
+            <button id="face">Face</button>
+            <button id="heart">Heart</button>
+            <button id="book">Book</button>
+            <button id="hand">Hand</button>
+            <button id="sport">sports</button>
+            <button id="flag">Flag</button>
+        </div>
+        <div class="search">
+            <input type="text" placeholder=" Search Emoji..." id="inp">
+        </div>
+    </div>
+    <div id="emojee-cont"></div>
+    <script src="emojee.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
