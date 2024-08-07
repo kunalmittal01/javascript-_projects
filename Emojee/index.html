@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emojee Search</title>
+    <link rel="stylesheet" href=
+    "https://cdn.jsdelivr.net/npm/sweetalert2@10">
+        <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
         *{
             margin: 0;
@@ -12,7 +15,8 @@
         }
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #FFDFBB;
+            background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+            /* background-image: linear-gradient(to top, #c1dfc4, #deecdd); */
         }
         h1{
             text-align: center;
@@ -26,7 +30,7 @@
         }
         .btn-menu button{
             padding: 0.5rem;
-            background-color: #FDBB8F;
+            background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);;
             border-radius: 10px;
             border: none;
             cursor: pointer;
@@ -34,11 +38,10 @@
             font-size: 15px;
         }
         .btn-menu button:hover{
-            background-color: #FCA56B;
+            background-image: linear-gradient(to top, #c1dfc4, #deecdd);
         }
         .search{
             display: flex;
-            /* border-radius: 10px; */
         }
         .search input {
             border-radius: 50px;
@@ -51,8 +54,9 @@
         #emojee-cont {
             display: grid;
             grid-template-columns: repeat(10,4.5rem);
+            row-gap: 1rem;
             justify-content: center;
-            font-size: 50px;
+            font-size: 40px;
             padding-inline: 5rem;
             line-height: 5.5rem;
         }
@@ -74,6 +78,28 @@
                 }
                
         }
+        .hover {
+            display: flex;
+            align-items: center;
+            box-shadow: 30px 30px 30px rgb(15, 96, 189);
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            animation: zoom 1s linear 1;
+        }
+        .hover:hover{
+            animation: Rotate 2s linear infinite;
+        }
+        @keyframes Rotate{
+            0% { transform: rotate(0deg); }
+            50%{ transform: rotate(360deg);}
+            100%{transform: rotate(0deg);}
+        }
+        @keyframes zoom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
@@ -93,6 +119,9 @@
         </div>
     </div>
     <div id="emojee-cont"></div>
+    <script src=
+"https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    </script>
     <script src="emojee.js"></script>
     <script src="script.js"></script>
 </body>

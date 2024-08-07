@@ -13,14 +13,20 @@ let div = document.createElement('div');
 function display(emj){
     emj.forEach(function(emj) {
         let span = document.createElement('span');
+        span.classList.add('hover');
         span.innerHTML = emj.emoji;
         span.style.cursor = 'pointer';
         span.addEventListener('click',()=>{
-            navigator.clipboard.writeText(emj.emoji).then(function() {
-                alert('copied to clipboard:' + emj.emoji);
-            },function(err) {
+            navigator.clipboard.writeText(emj.emoji).then(function(){
+                // alert('copied to clipboard:' + emj.emoji);
+                Swal.fire({
+                    title: 'Bingo!',
+                    text: `copied to clipboard: ${emj.emoji}`,
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+            }),function(err) {
                 console.error('could not copy text:',err);
-            })
+            }});
         })
         disp.appendChild(span);
     });
