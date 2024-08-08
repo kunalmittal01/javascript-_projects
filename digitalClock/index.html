@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="clock">
+        <p id="greet"></p>
+        <h4>DIGITAL CLOCK</h4>
+        <div class="time-cont">
+            <div id="hour" class="time">
+                <p id="h-d"></p>
+                <p class="back">HOURS</p>
+            </div>
+            
+            <div id="min" class="time">
+                <p id="m-d"></p>
+                <p class="back">MINUTES</p>
+            </div>
+
+            <div id="sec" class="time">
+                <p id="s-d"></p>
+                <p class="back">SECONDS</p>
+            </div>
+            <div id="pm">PM</div>
+        </div>
+        <div id="countdown"></div>
+        <div class="set">
+            <select name="" id="month">
+                <option value="Jan">Jan</option>
+                <option value="Feb">Feb</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="May">May</option>
+                <option value="Jun">Jun</option>
+                <option value="Jul">Jul</option>
+                <option value="Aug">Aug</option>
+                <option value="Sept">Sept</option>
+                <option value="Oct">Oct</option>
+                <option value="Nov">Nov</option>
+                <option value="Dec">Dec</option>
+            </select>
+            <input type="number" id="year" placeholder="year">
+            <input type="number" id="din" placeholder="day">
+            <input type="number" id="ghante" placeholder="hour">
+            <input type="number" id="minute" placeholder="minute">
+            <input type="number" id="second" placeholder="second">
+        </div>
+        <p><button id="start">START</button>
+        <button id="clear">CLEAR</button></p>
+    </div>
+    <div id="facts"></div>
+    <script src="script.js"></script>
+</body>
+</html>
