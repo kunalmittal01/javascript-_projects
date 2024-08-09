@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #f0f0f0;
+      }
+
+      .watch-cont {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        font-size: 50px;
+        color: #f92672;
+        gap: 2rem;
+      }
+
+      .first {
+        width: 65%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .ms {
+        display: none;
+        align-items: center;
+      }
+      .btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+      }
+      .btns button {
+        padding: 2% 5%;
+        border-radius: 25px;
+        border: none;
+        background-color: #f92672;
+        font-size: 29px;
+        color: white;
+        margin-right: 1.5rem;
+        box-shadow: 0 0 20px #c3c3c3;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: #f44583;
+      }
+
+      .opacity {
+        cursor: default;
+        opacity: 0.5;
+      }
+
+      .flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 50rem;
+        font-size: 18px;
+      }
+      .add {
+        display: flex;
+        justify-content: space-around;
+        gap: 5px;
+      }
+      .add button {
+        border: none;
+        background-color: tomato;
+        font-size: 20px;
+        color: white;
+        border-radius: 5px;
+        padding: 2px 5px;
+      }
+
+      .stopwatch-default {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        color: #000000;
+        font-family: "Arial", sans-serif;
+      }
+
+      .stopwatch-retro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        background-color: #f0e68c;
+        color: #8b4513;
+        font-family: "Courier New", monospace;
+        border: 2px solid #8b4513;
+        height: 100vh;
+      }
+
+      .stopwatch-digital {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+        color: #00ff00;
+        gap: 1.5rem;
+        height: 100vh;
+        font-family: "Digital-7", sans-serif;
+        background-image: url('https://w0.peakpx.com/wallpaper/117/204/HD-wallpaper-digital-watch.jpg');
+      }
+
+      .stopwatch-analog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        height: 100vh;
+        align-items: center;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqIPY7NusDu-gGDKtQMjGt_mUOc3eQWWmtdg&s");
+        color: white; 
+      }
+
+      @media screen and (max-width: 500px) {
+        .watch-cont {
+          font-size: 30px;
+        }
+
+        .btns button {
+          padding: 3% 4%;
+          margin-right: 0.7rem;
+          border-radius: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="watch-cont">
+      <div class="add">
+        <button id="record">Record</button>
+        <button id="clear">Clear</button>
+        <select id="themeSelector">
+          <option value="default">Choose Theme:</option>
+          <option value="retro">Retro</option>
+          <option value="digital">Digital</option>
+          <option value="analog">Analog</option>
+        </select>
+      </div>
+      <div class="first">
+        <h1 id="hours">00</h1>
+        <h2>:</h2>
+        <h1 id="minutes">00</h1>
+        <h2>:</h2>
+        <h1 id="seconds">00</h1>
+        <div class="ms">
+          <h2>.</h2>
+          <h1 id="msd">00</h1>
+        </div>
+      </div>
+      <div class="btns">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div id="disp"></div>
+    </div>
+    <script src="sccript.js"></script>
+  </body>
+</html>
