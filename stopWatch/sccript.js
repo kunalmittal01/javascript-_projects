@@ -12,24 +12,16 @@ let clr = document.getElementById('clear');
 let theme = document.getElementById('themeSelector');
 let cont = document.getElementsByClassName('watch-cont')[0];
 
-let milsec = 0, secCount = 0,mint = 0, hour = 0,timer;
+let strt ,elapsedTime = 0, timer;
 let startTimer = ()=>{
-     timer = setInterval(() => {
-        msd.innerText = `${milsec++}`.toString().padStart(2,'0');
-        if(milsec == 99){          
-            sec.innerText = `${++secCount}`.toString().padStart(2,'0');
-            milsec = 0;
-            msd.innerText = "00";
-        }
-        if(secCount == 60){
-            secCount = 0;
-            min.innerText = `${++mint}`.toString().padStart(2,'0');
-        }
-        if(min == 60) {
-            min = 0;
-            hr.innerText = `${++hour}`.toString().padStart(2,'0');
-        }
-  },10);
+        strt = performance.now() - elapsedTime;
+        timer = setInterval(() => {
+        elapsedTime = performance.now() - strt;
+        msd.innerText = Math.floor(elapsedTime % 1000);
+        sec.innerText = Math.floor((elapsedTime / 1000) % 60).toString().padStart(2, '0');
+        min.innerText = Math.floor((elapsedTime / 60000) % 60).toString().padStart(2, '0');
+        hr.innerText = Math.floor((elapsedTime / 3600000) % 24).toString().padStart(2, '0');
+  },100);
 };
 
 start.addEventListener("click",() => {
@@ -52,15 +44,14 @@ reset.addEventListener("click",() => {
     start.classList.remove("opacity");
     pause.classList.remove("opacity");
     clearInterval(timer);
+    elapsedTime = 0;
     ms.style.display = 'none';
     milsec = 0;
     msd.innerText = '00';
-    secCount = 0;
     sec.innerText = '00';
-    mint = 0;
     min.innerText = '00';
-    hour = 0;
     hr.innerText = '00';
+    disp.innerText = '';
 });
 
 let display = (arr)=>{
@@ -89,8 +80,7 @@ clr.addEventListener("click",() => {
 theme.addEventListener("change",() => {
 
     let value = theme.value;
-    console.log(value);
-    
+
     if(value == 'default') {
         cont.className = "";
         cont.classList.add("watch-cont");
