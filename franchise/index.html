@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Franchise</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+          --background-color: white;
+          --text-color: black;
+      }
+
+      body {
+          background-color: var(--background-color);
+          color: var(--text-color);
+          transition: background-color 0.5s, color 0.5s;
+      }
+
+      .cont {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .cont button {
+        width: 100px;
+      }
+
+      .menu input {
+        margin-right: 5px;
+      }
+
+      #orderid {
+        position: absolute;
+        color: red;
+        right: 5%;
+      }
+
+      #order {
+        background-color: blue;
+        border: none;
+        padding: 2px 4px;
+        border-radius: 5px;
+      }
+
+      .menu-cont {
+        display: flex;
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+      }
+
+      @keyframes anim {
+        0% { transform: scale(1); }
+        50% { transform: scale(0.5); }
+        75% { transform: scale(10.5rem)}
+        100% { transform: scale(1); }
+      }
+
+      #disp {
+        width: 400px;
+        height: 300px;
+        margin: 3rem auto;
+        font-size: 20px;
+      }
+      #disp img{
+        animation: anim 2s linear;
+        height: 300px;
+        width: 300px;
+        box-shadow: 0 0 20px rgb(99, 69, 69);
+        opacity: 0.7;
+      }
+
+      .retro {
+          --background-color: #f5deb3;
+          --text-color: #8b4513;
+          background-image: url('https://thumbs.dreamstime.com/b/fast-food-restaurant-retro-theme-featuring-vintage-signage-classic-uniforms-fast-food-restaurant-retro-theme-274116616.jpg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center center;
+      }
+
+      .modern {
+          --background-color: #f0f0f0;
+          --text-color: #333;
+          background-image: url('https://media.licdn.com/dms/image/C5112AQENhjjXS0srYQ/article-cover_image-shrink_600_2000/0/1553952276503?e=2147483647&v=beta&t=mmWM82ShuVYmCgr0PTBrdpC-8EpNuzsHNxZEEeuns_w');
+          background-repeat: no-repeat;
+          background-position: center 0%;
+          font-size: 25px;
+          font-weight: bold;
+          color: rgb(38, 38, 85)
+      }
+
+      .scifi {
+          --background-color: #000;
+          --text-color: rgb(190, 23, 59);
+          background-image: url('https://assets.bonappetit.com/photos/60522a333b0236be8081d884/master/w_1600%2Cc_limit/Mars-2112-inline-interior-2.jpg');
+          background-repeat: no-repeat;
+          background-position: center 0%;
+      }
+
+      .menu div {
+        display: flex;
+        gap: 7px;
+        padding: 0 5px;
+      }
+
+      .bur:hover {
+        background-color: rgb(30, 56, 170);
+        color: white;
+        border-radius: 5px;
+      }
+
+      .fr:hover {
+        background-color: rgb(136, 150, 58);
+        color: white;
+        border-radius: 5px;
+      }
+
+      .dr:hover {
+        background-color: rgb(197, 15, 15);
+        color: white;
+        border-radius: 5px;
+      }
+
+
+      @media screen and (max-width: 400px){
+        #orderid {
+            right: 2%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="theme-selector">
+      <label for="themes">Choose a Theme:</label>
+      <select id="themes">
+          <option value="default">Default</option>
+          <option value="retro">Retro</option>
+          <option value="modern">Modern</option>
+          <option value="scifi">Sci-Fi</option>
+      </select>
+  </div>
+    <div class="cont">
+      <div class="menu-cont">
+        <div class="menu">
+          <button id="order">Order Food</button>
+          <div>
+            <div class="bur">
+              <label for="burger">Burger</label>
+              <input type="checkbox" id="burger" class="food" name="burger" />
+            </div>
+            <div class="fr">
+              <label for="fries">Fries</label>
+              <input type="checkbox" id="fries" class="food" name="fries" />
+            </div> 
+            <div class="dr">
+              <label for="drink">Drink</label>
+              <input type="checkbox" id="drink" class="food" name="drink" />
+            </div>
+          </div>
+        </div>
+        <p id="orderid"></p>
+      </div>
+    </div>
+    <div id="disp"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
