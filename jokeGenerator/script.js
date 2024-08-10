@@ -41,3 +41,13 @@ let font = document.getElementById('selectfont');
 font.addEventListener('change',()=>{
     disp.style.fontSize = `${font.value}px`;
 });
+
+let audio = document.querySelector('.audio');
+
+audio.addEventListener('click',()=>{
+    let joke = disp.textContent;
+    console.log(joke);
+    
+    let speech = new SpeechSynthesisUtterance(joke);
+    speechSynthesis.speak(speech);
+});
