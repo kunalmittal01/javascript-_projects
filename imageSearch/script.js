@@ -6,7 +6,8 @@ let disp = document.getElementById("results");
 let imgShown = 0, imgCnt = 0;
 async function createCards(resp,query) {
     console.log(resp)
-    if(resp.results.some(t=> t.description.includes(query) || t.description.includes(query))){
+    if(resp.results.some(t=> t.description.includes(query) || t.description.includes(query) || t.alternative_slugs
+.includes(query) || t.slugs.includes(query))) {
         resp.results.forEach((data)=>{
             let div = document.createElement('div');
             div.classList.add('imag');
@@ -59,6 +60,7 @@ if(imgCnt == 199) {
 search.addEventListener("click", ()=>{
     if(inp.value.length == 0) return;
     disp.innerHTML = '';
+    imgCnt = 0;
     fetchAllImages(inp.value);
 });
 
