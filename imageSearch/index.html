@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search App</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            width: 100%;
+        }
+
+        .search input {
+            border: none;
+            width: 20rem;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .search button {
+            border: none;
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+
+        }
+
+        #more {
+            display: none;
+            background-color: #0077B5;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 8px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .imag {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            box-shadow: 0 0 20px #E4E4E4;
+            transition: all 1s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .imag .desc {
+            cursor: pointer;
+        }
+
+        .imag:hover {
+            background-color: #E0E0E0;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .imag:hover img {
+            transform: scale(1.1);
+            transition: all 1s ease-in-out;
+        }
+
+        .imag img{
+            width: 300px;
+            height: 200px;
+        }
+
+        #results {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 1rem;
+        }
+
+        .imag p {
+            padding: 1rem 3rem;
+            word-break: break-all;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <h1>Image Search App</h1>
+        <div class="search">
+            <input type="text" id="inp" placeholder="Search for images...">
+            <button id="searchBtn">Search</button>
+        </div>
+        <div id="results"></div>
+        <button id="more">show more</button>
+        <script src="script.js"></script>
+        <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    </div>
+</body>
+</html>
