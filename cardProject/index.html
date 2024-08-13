@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            /* background-color: black; */
+        }
+        .card {
+            display: none;
+            border-radius: 5px;
+            box-shadow: 0 0 20px 5px #E2E2E2;
+            
+        }
+        .card-info {
+            width: 20rem;
+            padding: 2rem;
+        }
+        h2 {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .det {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            width: 15rem;
+        }
+        .style {
+            color: #6E6D6E;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>User Information Card</h2>
+        <div class="card-info">       
+            <div class="det">
+               <h4>First Name:</h4>
+               <p class="style" id="fname"></p>
+            </div>
+            <div class="det">
+                <h4>Last Name:</h4>
+                <p class="style" id="lname"></p>
+             </div>
+             <div class="det">
+                <h4>Country:</h4>
+                <p class="style" id="country"></p>
+             </div>
+             <div class="det">
+                <h4>Phone Number:</h4>
+                <p class="style" id="number"></p>
+             </div>
+             <div class="det">
+                <h4>State:</h4>
+                <p class="style" id="state"></p>
+             </div>
+             <div class="det">
+                <h4>City:</h4>
+                <p class="style" id="city"></p>
+             </div>
+             <div class="det">
+                <h4>Village:</h4>
+                <p class="style" id="village"></p>
+             </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
