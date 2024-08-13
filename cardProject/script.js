@@ -18,7 +18,7 @@ function storeData() {
      villageName = prompt('Enter your village name');
 
     localStorage.setItem('first', JSON.stringify(first));
-    localStorage.setItem('last', JSON.stringify(first));
+    localStorage.setItem('last', JSON.stringify(last));
     localStorage.setItem('country', JSON.stringify(countryName));
     localStorage.setItem('number', JSON.stringify(phoneNumber));
     localStorage.setItem('state', JSON.stringify(stateName));
@@ -32,7 +32,7 @@ function displayData() {
     fname.innerText = JSON.parse(localStorage.getItem('first'));
     lname.innerText = JSON.parse(localStorage.getItem('last'));
     country.innerText = JSON.parse(localStorage.getItem('country'));
-    number.innerText = JSON.parse(localStorage.getItem('phoneNumber'));
+    number.innerText = JSON.parse(localStorage.getItem('number'));
     state.innerText = JSON.parse(localStorage.getItem('state'));
     city.innerText = JSON.parse(localStorage.getItem('city'));
     village.innerText = JSON.parse(localStorage.getItem('village'));
