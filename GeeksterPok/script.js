@@ -2,7 +2,6 @@ let types = document.getElementById('types');
 let reset = document.getElementById('reset');
 let filter = document.getElementById('filter');
 let search = document.getElementById('search');
-let pika = document.getElementById('pika');
 let cont = document.getElementsByClassName('pokemon-cont')[0];
 
 let cardarr = [];
@@ -93,7 +92,10 @@ getData();
  function filterCards(type) {
     cont.innerHTML ='';
         cardarr.forEach((pok)=>{
-            if(pok.types.some(t=>t.type.name === type)){
+            if(pok.species.name === type) {
+                formCard(pok);
+            }
+            else if(pok.types.some(t=>t.type.name === type)){
                 formCard(pok);
             }
         });
@@ -110,7 +112,3 @@ search.addEventListener('keyup', ()=>{
         getData();
     }
 });
-
-pika.addEventListener('click', (e)=>{
-    e.preventDefault();
-})

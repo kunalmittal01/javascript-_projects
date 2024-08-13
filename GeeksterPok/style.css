@@ -5,8 +5,7 @@
 
 body {
     background-image: url("https://c4.wallpaperflare.com/wallpaper/677/922/425/pokemon-pokemon-red-and-blue-blastoise-pokemon-bulbasaur-pokemon-wallpaper-preview.jpg");
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 
@@ -20,12 +19,6 @@ body::-webkit-scrollbar-thumb {
     height: 1.5rem;
 }
 
-.clicker-script-regular {
-    font-family: "Clicker Script", cursive;
-    font-weight: bold;
-    font-style: normal;
-  }
-  
 
 .main-cont {
     display: flex;
@@ -46,11 +39,6 @@ body::-webkit-scrollbar-thumb {
     width: 7rem;
 }
 
-.main-cont h1 {
-    font-size: 4rem;
-    color: rgb(86, 34, 182);
-}
-
 .inp-cont {
     display: flex;
     flex-direction: column;
@@ -63,7 +51,7 @@ body::-webkit-scrollbar-thumb {
     border: none;
     padding: 2px 8px;
     border-radius: 5px;
-    background-color: blue;
+    background-color: red;
     color: white;
     text-decoration: none;
 }
@@ -73,17 +61,24 @@ body::-webkit-scrollbar-thumb {
     color: white;
 }
 
-#reset:hover,#filter:hover,#types:hover {
-    background-color: darkblue;
-    box-shadow: 0 0 10px rgb(184, 59, 59);
+#reset:hover,#filter:hover {
+    background-color: rgb(255, 0, 55);
+    box-shadow: 0 0 10px 2px rgb(184, 59, 59);
     color: white;
     cursor: pointer;
 }
 
 .inp-first select {
-    color: blue;
-    background-color: rgb(221, 220, 216);
+    background-color: red;
     font-weight: bold;
+    border-radius: 5px;
+    /* width: 7rem; */
+    padding: 0 0.5rem;
+    color: white;
+}
+
+option {
+    color: white;
 }
 
 .inp-second input{
