@@ -81,7 +81,7 @@ function formCard(info) {
 }
 
 async function getData() {
-    for(let i = 1; i < 300; i++) {
+    for(let i = 1; i < 500; i++) {
         let res = await fetchPokemon(i);
         cardarr.push(res);
         formCard(res);
@@ -92,10 +92,10 @@ getData();
  function filterCards(type) {
     cont.innerHTML ='';
         cardarr.forEach((pok)=>{
-            if(pok.species.name === type) {
+            if(pok.species.name.startsWith(type)) {
                 formCard(pok);
             }
-            else if(pok.types.some(t=>t.type.name === type)){
+            else if(pok.types.some(t=>t.type.name.startsWith(type))){
                 formCard(pok);
             }
         });
@@ -106,7 +106,7 @@ filter.addEventListener('click', ()=>{
 });
 
 search.addEventListener('keyup', ()=>{
-    filterCards(search.value);
+    filterCards(search.value.toLowerCase());
     if(search.value.length == 0)
     {
         getData();
