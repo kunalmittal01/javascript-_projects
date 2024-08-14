@@ -75,3 +75,8 @@ showbtn.addEventListener('click', async()=>{
     imgShown = 0;
     fetchAllImages(query);
 });
+
+document.querySelector('#head').addEventListener('mouseenter', ()=>{
+     setInterval(()=>{
+        document.querySelector('#head').style.color =  '#' + parseInt(Math.random()*165224).toString(16)},1000);
+});
