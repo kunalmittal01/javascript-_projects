@@ -6,9 +6,12 @@ let disp = document.getElementById("results");
 let imgShown = 0, imgCnt = 0;
 async function createCards(resp,query) {
     console.log(resp)
-    if(resp.results.some(t=> t.description.includes(query) || t.description.includes(query) || t.alternative_slugs
-.includes(query) || t.slugs.includes(query))) {
         resp.results.forEach((data)=>{
+            let description = data.description ? data.description : '';
+            let alternative_slugs = data.alternative_slugs.en ? data.alternative_slugs.en : '';
+            let slugs = data.slugs ? data.slugs.join(' ') : '';
+
+            if(description.includes(query) || alternative_slugs.includes(query) || slugs.includes(query)) {
             let div = document.createElement('div');
             div.classList.add('imag');
             div.innerHTML = `
@@ -28,9 +31,11 @@ async function createCards(resp,query) {
             else {
                 div.querySelector('.desc').textContent = data.description;
             }
+        }
         });
+        
     }
-}
+// }
 
 async function fetchImages(i) {
     let res = await fetch(`https://api.unsplash.com/search/photos?page=${i}&query=sea&client_id=RZEIOVfPhS7vMLkFdd2TSKGFBS4o9_FmcV1Nje3FSjw`);
@@ -61,6 +66,7 @@ search.addEventListener("click", ()=>{
     if(inp.value.length == 0) return;
     disp.innerHTML = '';
     imgCnt = 0;
+    imgShown = 0;
     fetchAllImages(inp.value);
 });
 
