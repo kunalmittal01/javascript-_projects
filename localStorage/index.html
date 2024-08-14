@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Save textarea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+
+        .theme {
+            margin: 0 45%;
+        }
+
+        .align {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30rem;
+        padding: 2rem 0;
+        margin: 1.5rem auto;
+        border-radius: 5px;
+        }
+
+       .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30rem;
+        padding: 2rem 0;
+        margin: 1.5rem auto;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 5px #DADADA;
+       }
+       .card textarea {
+            margin-top: 0.5rem;
+            height: 10rem;
+            width: 90%;
+            resize: vertical;
+            border: 2px solid #DDDDDD;
+            border-radius: 5px;
+            padding: 1rem;
+            font-size: 19px;
+       }
+
+        .light-theme-body {
+        background-color: #f5f5f5;
+        color: #333;
+        }
+
+        .light-theme-card {
+            margin: 0 auto;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .custom-theme-body {
+        background-color: #ffebcd;
+        color: #4b0082; 
+        }
+
+        .custom-theme-card {
+            background-color: #faebd7; 
+            color: #4b0082;
+        }
+
+        .dark-theme-body {
+        background-color: #1c1c1c;
+        color: #f0f0f0;
+        }
+
+        .dark-theme-card {
+            background-color: #333333;
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme">
+        <select name="" id="choose-theme">
+            <option value>Select Theme</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="custom">Custom</option>
+        </select>
+    </div>
+    <div class="card">
+        <h2>Auto Save Textarea</h2>
+        <textarea id="myTextarea" rows="5" cols="30" placeholder="Enter your text here..."></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
