@@ -5,7 +5,6 @@ async function fetchImages() {
     let data = await fetch(`https://api.unsplash.com/photos/random/?client_id=_${api_key}&count=${count}`);
 
     let image = await data.json();
-    console.log(image);
     
     return image;
 }
@@ -23,7 +22,8 @@ async function displayImage() {
          return div2.innerHTML;
     }).join('');
 }
-displayImage();
+
+window.onload = ()=> displayImage();
 
 window.onscroll = function() {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
