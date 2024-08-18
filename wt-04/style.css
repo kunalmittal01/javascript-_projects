@@ -1,0 +1,249 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1D2735;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    overflow: hidden;
+}
+
+.main .signin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.signin :first-child {
+    font-size: 20px;
+    font-weight: bold;
+    color: #A6ADBA;
+}
+
+.signin :nth-child(2) {
+    font-weight: bold;
+    background-color: #6419E6;
+    padding: 0.8rem 0.7rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+.buynow {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: #A6ADBA;
+}
+
+.buynow button {
+    background-color: #6419E6;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buynow h1{
+    font-size: 55px;
+    text-align: center;
+}
+
+.buynow p {
+    text-align: center;
+    line-height: 1.6rem;
+    font-size: 18px;
+}
+
+.phone-img {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 30%;
+    width: 100%;
+    margin-top: 10rem;
+}
+
+.phone-img :nth-child(2) {
+    top: -7rem;
+    position: absolute;
+}
+
+@media screen and (max-width: 845px) {   
+
+    .phone-img img{
+        width: 300px;
+    }
+
+    .phone-img :nth-child(2) {
+        top: -4rem;
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .phone-img :nth-child(2) {
+        top: -2rem;
+        position: absolute;
+    }
+
+    .buynow h1{
+        font-size: 45px;
+        text-align: center;
+    }
+    .phone-img img{
+        width: 120px !important;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .phone-img :nth-child(2) {
+        top: -1.5rem;
+        position: absolute;
+    }
+    .phone-img img{
+        width: 150px;
+    }
+}
+
+.query {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.query h1 {
+    color: #A6ADBA;
+}
+
+.query .search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.query .search input {
+    padding: 1rem 1.8rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.query .search button {
+    padding: 1rem 1.8rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #6419E6;
+    font-weight: bold;
+}
+
+.results {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3rem;
+    margin-top: 1.5rem;
+}
+
+.results .mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 19rem;
+    color: #A6ADBA;
+    box-shadow:  0 20px 25px -5px rgb(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 3rem 2rem;
+}
+
+.results img {
+    border-radius: 5px;
+}
+
+.results .mobile p {
+    text-align: center;
+    line-height: 1.5rem;
+    line-break: strict;
+}
+
+.results .mobile button,#showmore, .details button{
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #6419E6;
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: #0D6EFD0D;
+    padding: 5rem 0px;
+    margin-top: 4rem;
+    font-weight: bolder;
+}
+
+footer img {
+    width: 50px;
+    height:  50px;
+}
+
+.icons {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    background-color: #5616C5;
+    cursor: pointer;
+}
+
+.mobile-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detdisp .details {
+    position: absolute;
+    top: 100rem;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: #A6ADBA;
+    padding: 1rem 3rem;
+    background-color: #1D232A;
+    width: 60%;
+    height: 40rem;
+    overflow: auto;
+    margin-left: 15%;
+}
+
+.details p {
+    text-align: center;
+    line-height: 1.5rem;
+    padding-block: 2rem;
+}
+
