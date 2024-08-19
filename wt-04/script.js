@@ -10,8 +10,7 @@ showbtn.style.display = 'none';
 async function fetchResults(query) {
     let res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${query}`);
     let  data = await res.json();
-    console.log(data);
-    
+    showbtn.style.display = 'none';
     data.data.forEach(mob=>{
         if(mob.brand.includes(query) || mob.phone_name.startsWith(query) || mob.brand.includes(query) || mob.slug.indexOf(query) !== -1) {
             let mobile = {};
@@ -26,6 +25,7 @@ async function fetchResults(query) {
 }
 
 async function displayResults(limit = 11) {
+    showbtn.style.display = 'none';
     for(let i = cardShown; i < arr.length && i < (cardShown + limit); i++) {
         let phone = arr[i];
         let div = document.createElement('div');
@@ -42,8 +42,18 @@ async function displayResults(limit = 11) {
         div2.appendChild(div);
         disp.appendChild(div2);
     }
+    console.log(arr,cardShown,cardCount);
+    
+    if(disp.innerHTML.length == 0) {
+        showbtn.style.display = 'none';
+        document.getElementsByClassName('search-anim')[0].style.display = 'none';
+        disp.textContent = "No Results Found!";
+        disp.style.color = '#A6ADBA';
+        disp.style.fontSize = '20px'
+        return;
+    }
     cardShown += limit;
-    if(cardShown >= cardCount) {
+    if( cardShown >= cardCount) {
         showbtn.style.display = 'none';
     }
     else {
@@ -54,7 +64,6 @@ async function displayResults(limit = 11) {
 myDebounce = function() {
     let debounceTimer;
     return function () {
-        let context = this, args = arguments;
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(function () {
             displayResults();
@@ -66,6 +75,7 @@ async function filter(query) {
     arr = [];
     disp.innerHTML = '';
     cardShown = 0;
+    cardCount = 0;
     await fetchResults(query);
     let result = myDebounce();
     result();
