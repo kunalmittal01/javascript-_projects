@@ -36,8 +36,9 @@ async function displayResults(limit = 11) {
             <img src="${phone.image}" alt="${phone.name}">
             <h2>${phone.name}</h2>
             <p>${phone.description}</p>
-            <a href="#redirect"><button id=${phone.name} class="det-drp" onclick="showDetails('${phone.slug}',this)">SHOW DETAILS</button></a>
+            <button id=${phone.name} class="det-drp" onclick="showDetails('${phone.slug}',this)">SHOW DETAILS</button>
         `;
+        document.getElementsByClassName('search-anim')[0].style.display = 'none';
         div2.appendChild(div);
         disp.appendChild(div2);
     }
@@ -50,15 +51,33 @@ async function displayResults(limit = 11) {
     }
 }
 
+myDebounce = function() {
+    let debounceTimer;
+    return function () {
+        let context = this, args = arguments;
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function () {
+            displayResults();
+        }, 3000);
+    };
+}
+
 async function filter(query) {
     arr = [];
     disp.innerHTML = '';
     cardShown = 0;
     await fetchResults(query);
+    let result = myDebounce();
+    result();
+}
+
+window.onload = async function() {
+    await fetchResults('samsung');
     displayResults();
 }
 
 btn.addEventListener('click', async () => {
+    document.getElementsByClassName('search-anim')[0].style.display = 'flex';
     let query = search.value.toLowerCase();
     if(query.length == 0) {
         showbtn.style.display = 'none';
@@ -71,11 +90,8 @@ showbtn.addEventListener('click', () => {
 });
 
 function displayDetails(info,par) {
-    let detdisp = document.getElementsByClassName('detdisp')[0];
-    if(detdisp.querySelector('.details')) {
-        detdisp.querySelector('.details').remove();
-    }
     let div = document.createElement('div');
+    let modal = document.getElementById('modal');
     div.classList.add('details');
     div.innerHTML = `
         <img src="${info.data.image}" alt="${info.data.name}">
@@ -91,9 +107,12 @@ function displayDetails(info,par) {
             <p>${info.data.releaseDate}</p>
         </div>
         <button onclick="closeDetails(this)">CLOSE</button>`
-        par.appendChild(div);
-        detdisp.appendChild(div)
+        modal.style.display = 'flex';
+        modal.appendChild(div);
+        modal.showModal();
+        document.getElementById('overlay').style.display = 'block';
 }
+
 async function getDetails(phone,par) {
     let details  = await fetch(`https://openapi.programming-hero.com/api/phone/${phone}`);
     let data = await details.json();
@@ -103,11 +122,13 @@ async function getDetails(phone,par) {
 
 async function showDetails(phone,butele) {
     let par = butele.parentElement.parentElement;
-    await getDetails(phone,par) 
+    await getDetails(phone,par); 
 }
 
 function closeDetails(closebut) {
     let par = closebut.parentElement;
     par.innerHTML = "";
-    par.remove();
+    modal.close();
+    document.getElementById('overlay').style.display = 'none';
+    modal.style.display = 'none';
 }

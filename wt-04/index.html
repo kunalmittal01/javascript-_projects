@@ -8,19 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <div id="overlay"></div>
     <div class="main">
-        <div class="signin">
-            <p >Hot Gadgets</p>
-            <button>SIGN UP</button>
-        </div>
+        <div class="nav-cont">
+            <div class="signin">
+                <p >Hot Gadgets</p>
+                <button>SIGN UP</button>
+            </div>
 
-        <div class="buynow">
-            <h1>Apple Iphone 13 Pro Max</h1>
-            <p>There are many variations of passages of Lorem Ipsum available, but the majority<br>
-                have suffered alteration in some form, by injected humou.</p>
-             <button>BUY NOW</button>   
+            <div class="buynow">
+                <h1>Apple Iphone 13 Pro Max</h1>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority<br>
+                    have suffered alteration in some form, by injected humou.</p>
+                <button>BUY NOW</button>   
+            </div>
         </div>
-
         <div class="phone-img">
             <img src="https://tasmim-tahsin.github.io/PhoneHuntingAPI/images/pngwing%202.png" alt="">
             <img src="	https://tasmim-tahsin.github.io/PhoneHuntingAPI/images/pngwing%201.png" alt>
@@ -33,10 +35,15 @@
                 <input id="search" type="text" placeholder="e.g.oppo,samsung,iphone">
                 <button id="search-btn">SEARCH</button>
             </div>
+            <div class="search-anim">
+                <h4>searching..</h4>
+                <p id="round"><span></span></p>
+            </div>
             <div class="results"></div>
             <button id="showmore">SHOW MORE</button>
         </div>        
-        <div class="detdisp"></div>
+        <!-- <div class="detdisp"></div> -->
+        <dialog id="modal"></dialog>
     </div>
     <footer>
         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSB3qEd_2mporyZruh5929jXB2FhMMUzgKMQBUR3KFeAA9SU83z" alt="">
