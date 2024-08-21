@@ -2,8 +2,21 @@ let menu = document.getElementsByClassName("menu")[0];
 let disp = document.getElementsByClassName("movies")[0];
 let search = document.getElementById("search");
 let searchbtn = document.getElementById("searchbtn");
-
+let anim = document.getElementsByClassName('search-anim')[0];
 document.querySelector("nav").style.height = '65px';
+
+myDebounce = (fun,delay)=>{
+    let timer;
+    return function() {
+        if(timer) {
+            clearTimeout(timer);
+            return;
+        }
+        timer = setTimeout(function() {
+            fun();
+        },delay);
+    };
+}
 
 document.querySelector(".menu-btn").onclick = ()=> {
     if(document.querySelector("nav").style.height == '65px') {
@@ -33,7 +46,11 @@ async function fetchResults(query) {
 
 async function updateMoviesData(query) {
     let resp = await fetchResults(query);
-    console.log(resp);
+    
+    if(resp.Response == 'False') {
+        movie.push('false');
+        return;
+    }
     resp.Search.forEach(resp => {
         obj = {};
         obj.title = resp.Title;
@@ -44,6 +61,15 @@ async function updateMoviesData(query) {
 }
 
 function displayMovie() {
+    anim.style.display = 'none';
+    if(movie.includes('false')) {
+        let p = document.createElement('p');
+        p.textContent = 'No Results Found!'; 
+        p.style.fontSize = '27px';
+        p.style.color = '#A6ADBA';
+        disp.appendChild(p);
+        return;
+    }
     disp.innerHTML = '';
     movie.forEach(obj => {
         let div = document.createElement('div');
@@ -67,11 +93,19 @@ window.onload = async()=>{
     displayMovie();
 };
 
-searchbtn.addEventListener('click', async function() {
-    let query = search.value.toLowerCase();
-    movie = [];
-    await updateMoviesData(query);
-    displayMovie();
+function debouncedSearch() {
+   return myDebounce(async function() {
+        let query = search.value.toLowerCase();
+        movie = [];
+        await updateMoviesData(query);
+        displayMovie();
+    },3000)
+}
+searchbtn.addEventListener('click', ()=>{
+    disp.innerHTML = '';
+    anim.style.display = 'flex';
+    let res = debouncedSearch();
+    res();
 });
 
 function viewDetails(id) {
