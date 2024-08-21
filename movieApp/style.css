@@ -40,6 +40,10 @@ h1 span {
     color: lightblue;
 }
 
+nav a {
+    text-decoration: none;
+}
+
 .nav-search {
     display: flex;
     align-items: center;

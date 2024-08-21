@@ -62,6 +62,8 @@ async function updateMoviesData(query) {
 
 function displayMovie() {
     anim.style.display = 'none';
+    console.log(movie);
+    
     if(movie.includes('false')) {
         let p = document.createElement('p');
         p.textContent = 'No Results Found!'; 
@@ -97,9 +99,15 @@ function debouncedSearch() {
    return myDebounce(async function() {
         let query = search.value.toLowerCase();
         movie = [];
+        if(query == '') {
+            console.log(query);
+            await updateMoviesData('marvel');
+            displayMovie();
+            return;
+        }
         await updateMoviesData(query);
         displayMovie();
-    },3000)
+    },2000)
 }
 searchbtn.addEventListener('click', ()=>{
     disp.innerHTML = '';

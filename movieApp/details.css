@@ -20,6 +20,11 @@ body {
     font-size: 20px;
 }
 
+.movie-details img:hover {
+    transform: scale(1.05);
+    transition: all 1s ease;
+}
+
 .movie-details a:visited {
     color: rgb(238, 144, 225);
 }
