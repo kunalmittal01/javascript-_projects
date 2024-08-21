@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+    color: blanchedalmond;
+}
+
+.movie-details {
+    margin-top: 2rem;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 3rem;
+}
+
+.movie-details strong {
+    margin-right: 0.5rem;
+}
+
+.movie-details a {
+    color: lightblue;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.movie-details a:visited {
+    color: rgb(238, 144, 225);
+}
+
+.movie-details a:active {
+    color: rgb(170, 25, 25);
+}
+
+@media screen and (max-width: 515px){
+    .movie-details {
+        flex-direction: column;
+    }
+    
+}
