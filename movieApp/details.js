@@ -5,7 +5,7 @@ window.onload = async()=> {
     let movieId = url.get('id');
 
     if(movieId) {
-        let res = await fetch(`http://www.omdbapi.com/?i=${movieId}&apikey=93e0121f`);
+        let res = await fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=93e0121f`);
         let data = await res.json();
         displayDetails(data);
     }

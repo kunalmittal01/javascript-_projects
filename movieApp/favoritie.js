@@ -4,7 +4,7 @@ let message = document.getElementsByClassName('message')[0];
 
 async function displayFavorites() {
     favorities.forEach(async function(id) {
-        let resp = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=93e0121f`);
+        let resp = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=93e0121f`);
         let obj = await resp.json();
         let div = document.createElement('div');
         div.innerHTML = `

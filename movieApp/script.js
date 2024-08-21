@@ -25,7 +25,7 @@ let movie = [];
 async function fetchResults(query) {
     console.log(query);
     
-    let data = await fetch(`http://www.omdbapi.com/?s=${query}&apikey=93e0121f`);
+    let data = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=93e0121f`);
     let res = await data.json();
     console.log(res);
     return res;
