@@ -83,7 +83,7 @@ function displayMovie() {
             <h3>${obj.title}</h3>
             <button class="view" onclick="viewDetails('${obj.id}')">View Details</button>
             <button class="fav-grp" onclick="addFav('${obj.id}')">Add to Favorites</button>
-            <button class="download-grp" onclick="download('${obj.id}')">Download</button>
+            <button class="download-grp" onclick="download('${obj.id}',this)">Download</button>
         </div>    
         `
         div.classList.add('movie');
@@ -150,7 +150,7 @@ document.getElementById('cross').onclick = () => {
     document.getElementById('cross').parentElement.style.display = 'none';
 };
 
-async function download(id) {
+async function download(id,elem) {
     let a = document.createElement('a');
     let data = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=93e0121f`)
     let movie = await data.json();
@@ -161,5 +161,13 @@ async function download(id) {
     a.download = `${movie.Title}.jpg`;
     document.body.appendChild(a);
     a.click();
-    download.body.removeChild(a);
+    document.body.removeChild(a);
+    // let par = elem.parentElement.parentElement;
+    const modal = document.getElementById('modal');
+    modal.showModal();
+    modal.style.display = 'flex';
+    setTimeout(()=>{
+        modal.close();
+        modal.style.display = "none";
+    },3100);
 }
