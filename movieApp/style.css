@@ -221,7 +221,7 @@ nav a {
     border: 1px solid black;
     box-shadow:  0 0  5px 1px gray;
     border-radius: 10px;
-    height: 40rem;
+    height: 41.5rem;
     width: 20rem;
 }
 
@@ -229,7 +229,6 @@ nav a {
     font-size: 1.5rem;
     color: white;
     text-align: center;
-    padding-inline: 2rem;
  }
 
 .movie img{
@@ -310,4 +309,22 @@ nav a {
     transition: all 0.5s ease;
     cursor: pointer;
     font-weight: bold;
+}
+
+.download-grp {
+    padding: 0.5em 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color:rgb(31, 34, 51);
+    color: #A6ADBA;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+
+.download-grp:hover {
+    background-color: #5B1A28;
+    color: white;
+    cursor: pointer;
+    transform: translate(5px,-5px);
 }

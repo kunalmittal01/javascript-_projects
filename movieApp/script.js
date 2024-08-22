@@ -83,6 +83,7 @@ function displayMovie() {
             <h3>${obj.title}</h3>
             <button class="view" onclick="viewDetails('${obj.id}')">View Details</button>
             <button class="fav-grp" onclick="addFav('${obj.id}')">Add to Favorites</button>
+            <button class="download-grp" onclick="download('${obj.id}')">Download</button>
         </div>    
         `
         div.classList.add('movie');
@@ -148,3 +149,17 @@ function addFav(id) {
 document.getElementById('cross').onclick = () => {
     document.getElementById('cross').parentElement.style.display = 'none';
 };
+
+async function download(id) {
+    let a = document.createElement('a');
+    let data = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=93e0121f`)
+    let movie = await data.json();
+    let resp = await fetch(movie.Poster);
+    let blob = await resp.blob();
+    let url = URL.createObjectURL(blob);
+    a.href = url;
+    a.download = `${movie.Title}.jpg`;
+    document.body.appendChild(a);
+    a.click();
+    download.body.removeChild(a);
+}
