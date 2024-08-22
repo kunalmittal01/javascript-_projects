@@ -92,6 +92,7 @@ function displayMovie() {
 
 window.onload = async()=>{
     await updateMoviesData('marvel');
+    await updateMoviesData('x-men');
     displayMovie();
 };
 

@@ -56,6 +56,10 @@ function delFav(id,remBtn) {
     if(favorities.length == 0) {
         favcont.innerHTML = '';
         message.style.display = 'flex';
+        let a = document.createElement('a');
+        a.href = 'index.html';
+        a.innerText = 'Back to Home';
+        message.appendChild(a);
         return; 
     }
 }
@@ -68,6 +72,10 @@ window.onload = function() {
 
     else {
         message.style.display = 'flex';
+        let a = document.createElement('a');
+        a.href = 'index.html';
+        a.innerText = 'Back to Home';
+        message.appendChild(a);
         return;
     }
 }

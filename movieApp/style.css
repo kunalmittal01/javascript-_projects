@@ -221,13 +221,21 @@ nav a {
     border: 1px solid black;
     box-shadow:  0 0  5px 1px gray;
     border-radius: 10px;
+    height: 40rem;
+    width: 20rem;
 }
 
 .movie h3 {
     font-size: 1.5rem;
     color: white;
     text-align: center;
+    padding-inline: 2rem;
  }
+
+.movie img{
+    width: 18rem;
+    height: 23rem;
+}
 
 .info {
     display: flex;

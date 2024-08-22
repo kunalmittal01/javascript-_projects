@@ -15,25 +15,26 @@
             margin-top: 2rem;
         }
 
-        .movie {
-            height: 40rem;
-            width: 20rem;
-        }
-
-        .movie img{
-            width: 18rem;
-            height: 23rem;
-        }
-
-        .movie h3 {
-            padding-inline: 2rem;
-        }
         .message {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             color: white;
+            gap: 1rem;
+        }
+
+        .message a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .message a:hover {
+            color:blue;
+            text-decoration: underline;
+            text-underline-offset: 5px;
         }
     </style>
 </head>
